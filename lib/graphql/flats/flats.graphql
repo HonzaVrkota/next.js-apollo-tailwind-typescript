@@ -1,0 +1,10 @@
+# Example of GraphQL query
+# Query is read from every folder of project
+# Its necessary create file with end .graphql --> *.graphql
+query Flats {
+  bmFlats {
+    id
+    slug
+    total_area
+  }
+}
