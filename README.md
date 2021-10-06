@@ -1,8 +1,11 @@
-# TypeScript and GraphQL Example
+# TypeScript, Tailwind CSS, Apollo and GraphQL setup
 
-One of the strengths of GraphQL is [enforcing data types on runtime](https://graphql.github.io/graphql-spec/June2018/#sec-Value-Completion). Further, TypeScript and [GraphQL Code Generator](https://graphql-code-generator.com/) (graphql-codegen) make it safer by typing data statically, so you can write truly type-protected code with rich IDE assists.
+Template with preconfigured Next.js app with TS, Tailwind CSS, Apollo and Graphql
 
-This template extends [Apollo Server and Client Example](https://github.com/vercel/next.js/tree/canary/examples/api-routes-apollo-server-and-client#readme) by rewriting in TypeScript and integrating [graphql-let](https://github.com/piglovesyou/graphql-let#readme), which runs [TypeScript React Apollo](https://graphql-code-generator.com/docs/plugins/typescript-react-apollo) in [graphql-codegen](https://github.com/dotansimha/graphql-code-generator#readme) under the hood. It enhances the typed GraphQL use as below:
+Before start you should create GraphQL server. 
+Folder lib/graphql - there you create graphql query with setup depencs on your server.
+
+Basic query hook for query data.
 
 ```tsx
 import { useNewsQuery } from './news.graphql'
@@ -17,6 +20,16 @@ const News = () => {
 
 By default `**/*.graphqls` is recognized as GraphQL schema and `**/*.graphql` as GraphQL documents. If you prefer the other extensions, make sure the settings of the webpack loader in `next.config.js` and `.graphql-let.yml` are consistent.
 
+### Graphql server
+
+In `.graphql-let.yml` change graphql server url address.
+
+## Env
+In .env.development create this env variables:
+- NEXT_PUBLIC_ADMIN_URL -> URL address of your admin server
+- NEXT_PUBLIC_MAINTENANCE_MODE -> Maintenance mode
+	- soon - template with coming soon
+	- maintenance - template witih maintenance
 ## Deploy your own
 
 Deploy the example using [Vercel](https://vercel.com):
